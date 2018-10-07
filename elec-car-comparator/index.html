@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Electric/Hybrid car comparator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Electric/Hybrid car comparator</h1>
+                <p>This small app aims to compute basic information about electricity/fuel consumption of an electric/hybrid car against a regular fuel-powered car.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                        <label for="carBatteryInput">Car battery (kW):</label>
+                        <input type="text" id="carBattery" name="carBatteryInput" class="form-control" value="7.6" />
+                </div>
+                <div class="form-group">
+                    <label for="electricityCostInput">Price per kWh:</label>
+                    <input type="text" id="electricityCost" name="electricityCostInput" class="form-control" value="0.22" />
+                    <small id="electCostHelp" class="form-text text-muted">The cost of 1 kWh in your area.</small>
+                </div>
+                <div class="form-group">
+                    <label for="currencyNameInput">Currency name:</label>
+                    <input type="text" id="currency" name="currencyNameInput" class="form-control" value="CHF" />
+                    <small id="currencyHelp" class="form-text text-muted">Enter whatever your currency is in that field (i.e. GBP, USD, EUR, CHF)</small>
+                </div>
+                <div class="form-group">
+                    <button id="goButton" class="btn btn-primary">Go!</button>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+<!-- Modal windows -->
+
+<div class="modal" id="modalShowSummary" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Your consumption</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p id="consumptionSummary"></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- End of modal windows -->
+
+    <script src="main.js"></script>
+</body>
+</html>
